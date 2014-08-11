@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio of Broc R. Gailit">
+    <meta name="author" content="Broc Gailit">
+
+    <title>Broc Gailit</title>
+
+    <!-- style: bootstrap -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/grayscale.css">
+
+    <!-- fonts -->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" ng-controller="AppCtrl" ng-cloak scroll-spy>
+
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="toggleResponsiveNav()">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <i class="fa fa-code"></i>  <span class="light">{{portfolio.name}}</span> {{portfolio.title}}
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div collapse="!navIsCollapsed" class="navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a class="page-scroll" href="#page-top" spy="intro" ng-click="toggleResponsiveNav()">Home</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about" spy="about" ng-click="toggleResponsiveNav()">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#work" spy="work" ng-click="toggleResponsiveNav()">Work</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact" spy="contact" ng-click="toggleResponsiveNav()">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Intro Header -->
+<header class="intro" id="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">{{portfolio.name}}</h1>
+                    <p class="intro-text">{{portfolio.description}}</p>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>About {{portfolio.nameFirst}}</h2>
+            <p>Broc is a freelance web developer.</p>
+            <!--
+            <form class="row" name="PhoneForm">
+                <label>Phone:</label>
+                <input name="phone" ng-model="phone" ui-mask="(999) 999-9999">
+                <hr>
+                <div class="well">
+                    <h1>Hellooo {{PhoneForm.phone.$viewValue}}!</h1>
+                </div>
+            </form>
+            <div ui-view></div>
+            -->
+        </div>
+    </div>
+</section>
+
+<!-- Work Section -->
+<section id="work" class="content-section text-center">
+    <div class="work-section">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Work by {{portfolio.nameFirst}}</h2>
+                <p>Things and stuff.</p>
+                <a href="#work" class="btn btn-default btn-lg">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Contact {{portfolio.nameFirst}}</h2>
+            <address>
+                <strong>{{portfolio.name}}</strong><br>
+                {{portfolio.address.street}}<br>
+                {{portfolio.address.city}}, {{portfolio.address.state}} {{portfolio.address.zip}}
+            </address>
+            <p><a href="mailto:{{portfolio.email}}">{{portfolio.email}}</a>
+            </p>
+            <ul class="list-inline banner-social-buttons">
+                <li>
+                    <a href="https://www.linkedin.com/in/brocgailit" target="social" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">linkedin</span></a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/brocgailit" target="social" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                </li>
+                <li>
+                    <a href="https://github.com/brocgailit" target="social" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                </li>
+                <li>
+                    <a href="https://plus.google.com/+BrocGailit/posts" target="social" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<div id="map-container" ng-controller="MapCtrl" >
+    <div ui-map-info-window="myInfoWindow">
+        <h1>Hello.</h1>
+    </div>
+
+    <div ui-map-marker="mapMarker" ui-event="{'map-click': 'openMarkerInfo(mapMarker)'}"></div>
+
+    <div id="map" ui-map="myMap" ui-options="mapOptions" class="map-canvas"></div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <p>Copyright &copy; {{portfolio.name}} 2014</p>
+    </div>
+</footer>
+
+<!-- jquery -->
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- angular -->
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-ui-utils/ui-utils.js"></script>
+<script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script type="text/javascript" src="lib/angular-ui-map/ui-map.js"></script>
+
+<!-- angular: app -->
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSTwHYvEO6uuXI5BvExUYRQ9QDxSXXL0I&v=3.exp&sensor=false&callback=onGoogleReady"></script>
+
+<script>
+    function onGoogleReady() {
+        console.log('google ready');
+        angular.bootstrap(document, ['broc']);
+    }
+
+</script>
+<!-- bootstrap theme -->
+<script src="js/grayscale.js"></script>
+</body>
+</html>
