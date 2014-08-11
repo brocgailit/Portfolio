@@ -1,4 +1,4 @@
-angular.module('broc', ['broc.controllers', 'ui.utils', 'ui.router', 'ui.bootstrap', 'ui.map'])
+angular.module('broc', ['broc.controllers', 'ui.utils', 'ui.router', 'ui.bootstrap', 'ui.map', 'rt.debounce'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -80,23 +80,32 @@ angular.module('broc', ['broc.controllers', 'ui.utils', 'ui.router', 'ui.bootstr
         };
     })
 
-    .directive('spy', function ($location, $anchorScroll) {
+    .directive('spy', function (debounce, $location, $anchorScroll) {
         return {
             restrict: "A",
             require: "^scrollSpy",
+
             link: function(scope, elem, attrs, affix) {
-                elem.click(function () {
-                    $location.hash(attrs.spy);
-                    $anchorScroll();
+
+                var highlightContainer = debounce(200, function() {
+                    $('#' + attrs.spy).addClass('active');
+                });
+
+                var unHighlightContainer = debounce(200, function() {
+                    $('#' + attrs.spy).removeClass('active');
                 });
 
                 affix.addSpy({
                     id: attrs.spy,
-                    in: function() {
-                        elem.addClass('active');
-                    },
+                    in:
+                        function() {
+                            elem.addClass('active');
+                            highlightContainer();
+
+                        },
                     out: function() {
                         elem.removeClass('active');
+                        unHighlightContainer();
                     }
                 });
             }

@@ -1,0 +1,41 @@
+@import "variables.less";
+@import "mixins.less";
+
+.testAnimation {
+  .transform(rotate(0));
+  background-color:@primary;
+  width:100px;
+  height:100px;
+
+  .transition( all 2s);
+
+  .active &{
+    background-color:white;
+    .animation-name(tester);
+    .animation-duration(1.5s);
+    .animation-iteration-count(infinite);
+    .animation-timing-function(linear);
+  }
+
+}
+
+@-webkit-keyframes tester {
+
+  0% {
+    .transform(rotate(0));
+  }
+
+  100% {
+    .transform(rotate(360deg));
+  }
+}
+
+@-moz-keyframes tester {
+  0% {
+    .transform(rotate(0));
+  }
+
+  100% {
+    .transform(rotate(360deg));
+  }
+}

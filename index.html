@@ -19,11 +19,14 @@
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
+    <!-- app styles -->
+    <link rel="stylesheet" href="css/portfolio.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="lib/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="lib/respond/dest/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -46,17 +49,17 @@
         <div collapse="!navIsCollapsed" class="navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a class="page-scroll" href="#page-top" spy="intro" ng-click="toggleResponsiveNav()">Home</a>
+                    <a class="page-scroll" ng-href="#page-top" spy="intro" ng-click="closeNav()">Home</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about" spy="about" ng-click="toggleResponsiveNav()">About</a>
+                    <a class="page-scroll" ng-href="#about" spy="about" ng-click="closeNav()">About</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#work" spy="work" ng-click="toggleResponsiveNav()">Work</a>
+                    <a class="page-scroll" ng-href="#work" spy="work" ng-click="closeNav()">Work</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact" spy="contact" ng-click="toggleResponsiveNav()">Contact</a>
-                </li>
+                    <a class="page-scroll" ng-href="#contact" spy="contact" ng-click="closeNav()">Contact</a>
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -87,6 +90,7 @@
         <div class="col-lg-8 col-lg-offset-2">
             <h2>About {{portfolio.nameFirst}}</h2>
             <p>Broc is a freelance web developer.</p>
+            <div class="testAnimation">test</div>
             <!--
             <form class="row" name="PhoneForm">
                 <label>Phone:</label>
@@ -174,6 +178,7 @@
 <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="lib/angular-debounce/dist/angular-debounce.min.js"></script>
 
 <script type="text/javascript" src="lib/angular-ui-map/ui-map.js"></script>
 

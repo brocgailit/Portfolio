@@ -76,7 +76,7 @@ a:focus {
   color: #fafdfd;
 }
 .navbar-custom .nav li.active {
-  outline: nonte;
+  outline: none;
   background-color: rgba(250, 253, 253, 0.3);
 }
 .navbar-custom .nav li a {

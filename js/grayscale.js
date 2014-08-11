@@ -17,9 +17,11 @@ $(window).scroll(function() {
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
+
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
-        }, 2000, 'easeOutExpo');
+        }, 1500, 'easeOutExpo');
         event.preventDefault();
+
     });
 });

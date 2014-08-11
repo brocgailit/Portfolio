@@ -14,11 +14,15 @@ angular.module('broc.controllers', [])
                 state:'Oregon',
                 zip: '97701'
             }
-        }
+        };
 
         $scope.toggleResponsiveNav = function (){
             $scope.navIsCollapsed = ! $scope.navIsCollapsed;
-        }
+        };
+
+        $scope.closeNav = function (){
+            $scope.navIsCollapsed = false;
+        };
 
         $scope.openModal = function (size) {
             $scope.items = ['item1', 'item2', 'item3'];
@@ -73,7 +77,7 @@ angular.module('broc.controllers', [])
                 icon: markerImage
             });
             addMarker(); //clear the watch
-        })
+        });
 
         $scope.mapOptions = {
             // How zoomed in you want the map to start at (always required)
